@@ -1,8 +1,9 @@
 import React from 'react';
 import styles from './AuthorizationStyles.module.css';
 import authPageBackground from '../../images/authorization/auth-page-background.png';
-import LoginForm from './Login/LoginForm/LoginForm';
+import LoginForm from './Login/LoginForm';
 import logo from '../../images/authorization/logo.png';
+import SignupForm from './Signup/SignupForm';
 
 const AuthorizationPage = () => {
     return (
@@ -15,7 +16,8 @@ const AuthorizationPage = () => {
             </div>
 
             <div className={styles["authorization-side"]}>
-                <LoginForm />
+                {/* <LoginForm /> */}
+                <SignupForm />
             </div>
         </div>
     );

@@ -2,30 +2,28 @@ import React, { useState } from 'react';
 import styles from './LoginFormStyles.module.css';
 import * as Yup from "yup";
 import { Formik, Form, Field } from 'formik';
-import userIcon from '../../../../images/authorization/user-icon.png';
-import lockIcon from '../../../../images/authorization/lock-icon.png';
-import hidenEyeIcon from '../../../../images/authorization/hiden-eye-icon.png';
-import eyeIcon from '../../../../images/authorization/eye-icon.png';
-import notCheckedIcon from '../../../../images/authorization/not-checked.png';
-import googleIcon from '../../../../images/authorization/google-icon.png';
-import facebookIcon from '../../../../images/authorization/facebook-icon.png';
+import userIcon from '../../../images/authorization/user-icon.png';
+import lockIcon from '../../../images/authorization/lock-icon.png';
+import hidenEyeIcon from '../../../images/authorization/hiden-eye-icon.png';
+import eyeIcon from '../../../images/authorization/eye-icon.png';
+import notCheckedIcon from '../../../images/authorization/not-checked.png';
+import googleIcon from '../../../images/authorization/google-icon.png';
+import facebookIcon from '../../../images/authorization/facebook-icon.png';
 import { useGoogleLogin } from '@react-oauth/google';
 
+const initialValues = {
+    email: '',
+    password: '',
+};
+
 const loginValidationSchema = Yup.object({
-  email: Yup.string()
-    .email("Write the correct email format")
-    .required("Email is required"),
-  password: Yup.string()
-    .min(6, "Password must containe at least 6 symbols")
-    .required("Password is required"),
+    email: Yup.string()
+        .email("Write the correct email format")
+        .required("Email is required"),
+    password: Yup.string()
+        .min(6, "Password must containe at least 6 symbols")
+        .required("Password is required"),
 });
-
-const submitHadler = (values, formikBag) => {
-    console.log("Email: " + values.email);
-    console.log("Password: " + values.password);
-
-    formikBag.resetForm();
-}
 
 const LoginForm = () => {
 
@@ -33,6 +31,13 @@ const LoginForm = () => {
     
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
+    }
+
+    const submitHadler = (values, formikBag) => {
+        console.log("Email: " + values.email);
+        console.log("Password: " + values.password);
+
+        formikBag.resetForm();
     }
 
     const signinWithGoogle = useGoogleLogin({
@@ -48,7 +53,7 @@ const LoginForm = () => {
             <p className={styles["login-subtitle"]}>Welcome back, please enter your detail</p>
 
             <Formik
-                initialValues={{ email: "", password: "" }}
+                initialValues={initialValues}
                 validationSchema={loginValidationSchema}
                 onSubmit={submitHadler}
             >
