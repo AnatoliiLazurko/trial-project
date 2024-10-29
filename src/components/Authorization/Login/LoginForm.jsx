@@ -10,6 +10,7 @@ import notCheckedIcon from '../../../images/authorization/not-checked.png';
 import googleIcon from '../../../images/authorization/google-icon.png';
 import facebookIcon from '../../../images/authorization/facebook-icon.png';
 import { useGoogleLogin } from '@react-oauth/google';
+import { useNavigate } from 'react-router-dom';
 
 const initialValues = {
     email: '',
@@ -28,6 +29,7 @@ const loginValidationSchema = Yup.object({
 const LoginForm = () => {
 
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
     
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -45,6 +47,10 @@ const LoginForm = () => {
             console.log(codeResponse.access_token);
         }
     });
+
+    const navigateToRegister = () => {
+        navigate('/auth/register');
+    }
 
     return (
         <div className={styles["login-container"]}>
@@ -113,7 +119,7 @@ const LoginForm = () => {
                 </div>
             </div>
 
-            <p className={styles["have-account-text"]}>Don’t have an account? <span>Sign up</span></p>
+            <p className={styles["have-account-text"]}>Don’t have an account? <span onClick={navigateToRegister}>Sign up</span></p>
         </div>
     );
 }

@@ -11,6 +11,7 @@ import facebookIcon from '../../../images/authorization/facebook-icon.png';
 import gmailIcon from '../../../images/authorization/gmail-icon.png';
 import backArrowIcon from '../../../images/authorization/back-arrow-icon.png';
 import { useGoogleLogin } from '@react-oauth/google';
+import { useNavigate } from 'react-router-dom';
 
 const initialValues = {
     firstname: '',
@@ -40,6 +41,7 @@ const signupValidationSchema = Yup.object({
 const SignupForm = () => {
 
     const [showPassword, setShowPassword] = useState(false);
+    const navigate = useNavigate();
     
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -57,6 +59,10 @@ const SignupForm = () => {
             console.log(codeResponse.access_token);
         }
     });
+
+    const navigateToLogin = () => {
+        navigate('/auth/login');
+    }
 
     return (
         <div className={styles["signup-container"]}>
@@ -154,7 +160,7 @@ const SignupForm = () => {
                 </div>
             </div>
 
-            <p className={styles["have-account-text"]}>Already have an account? <span>Sign in</span></p>
+            <p className={styles["have-account-text"]}>Already have an account? <span onClick={navigateToLogin}>Sign in</span></p>
         </div>
     );
 }

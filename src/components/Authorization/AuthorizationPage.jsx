@@ -4,8 +4,12 @@ import authPageBackground from '../../images/authorization/auth-page-background.
 import LoginForm from './Login/LoginForm';
 import logo from '../../images/authorization/logo.png';
 import SignupForm from './Signup/SignupForm';
+import { useParams } from 'react-router-dom';
 
 const AuthorizationPage = () => {
+
+    const { type } = useParams();
+
     return (
         <div className={styles["page-wrapper"]}>
             <div className={styles["background-container"]}>
@@ -16,8 +20,8 @@ const AuthorizationPage = () => {
             </div>
 
             <div className={styles["authorization-side"]}>
-                {/* <LoginForm /> */}
-                <SignupForm />
+                {type === "register" && <SignupForm />}
+                {type === "login" && <LoginForm /> }
             </div>
         </div>
     );
