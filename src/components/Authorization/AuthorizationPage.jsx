@@ -5,10 +5,11 @@ import LoginForm from './Login/LoginForm';
 import logo from '../../images/authorization/logo.png';
 import SignupForm from './Signup/SignupForm';
 import { useParams } from 'react-router-dom';
+import AccountType from './Signup/AccountType/AccountType';
 
 const AuthorizationPage = () => {
 
-    const { type } = useParams();
+    const { type, registerType } = useParams();
 
     return (
         <div className={styles["page-wrapper"]}>
@@ -20,8 +21,9 @@ const AuthorizationPage = () => {
             </div>
 
             <div className={styles["authorization-side"]}>
-                {type === "register" && <SignupForm />}
-                {type === "login" && <LoginForm /> }
+                {type === "register" && (registerType === 'clients' || registerType === 'professionals') && <SignupForm />}
+                {type === "login" && <LoginForm />}
+                {registerType === "accountType" && <AccountType /> }
             </div>
         </div>
     );

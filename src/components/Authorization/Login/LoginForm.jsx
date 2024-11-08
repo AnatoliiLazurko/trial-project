@@ -9,6 +9,7 @@ import eyeIcon from '../../../images/authorization/eye-icon.png';
 import notCheckedIcon from '../../../images/authorization/not-checked.png';
 import googleIcon from '../../../images/authorization/google-icon.png';
 import facebookIcon from '../../../images/authorization/facebook-icon.png';
+import checkboxChecked from '../../../images/authorization/checkbox-checked.png';
 import { useGoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,10 +30,15 @@ const loginValidationSchema = Yup.object({
 const LoginForm = () => {
 
     const [showPassword, setShowPassword] = useState(false);
+    const [isCkeckboxChecked, setCkeckboxChecked] = useState(false);
     const navigate = useNavigate();
     
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
+    }
+
+    const toggleCheckbox = () => {
+        setCkeckboxChecked(!isCkeckboxChecked);
     }
 
     const submitHadler = (values, formikBag) => {
@@ -49,7 +55,7 @@ const LoginForm = () => {
     });
 
     const navigateToRegister = () => {
-        navigate('/auth/register');
+        navigate('/auth/register/accountType');
     }
 
     return (
@@ -94,7 +100,8 @@ const LoginForm = () => {
 
                     <div className={styles["remember-forgot"]}>
                         <div className={styles["checkbox-wrapper"]}>
-                            <img src={notCheckedIcon} alt="Checkbox" />
+                            {!isCkeckboxChecked && <img src={notCheckedIcon} alt="Checkbox" onClick={toggleCheckbox} />}
+                            {isCkeckboxChecked && <img src={checkboxChecked} alt="Checkbox" onClick={toggleCheckbox} />}
                             <p>Remember me</p>
                         </div>
                         <div className={styles["forgot-password"]}>Forgot password</div>

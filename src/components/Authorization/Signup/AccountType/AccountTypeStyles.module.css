@@ -1,0 +1,83 @@
+
+.account-type-container {
+    max-width: 459px;
+    width: 100%;
+    height: auto;
+}
+
+.back-arrow {
+    width: 24px;
+    cursor: pointer;
+}
+
+.title {
+    margin: 0;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 48px;
+    color: #313131;
+}
+
+.subtitle {
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    line-height: 27px;
+    font-weight: 400;
+    color: #737373;
+}
+
+.btn-container {
+    margin-top: 42px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.type-button {
+    width: 100%;
+    height: 93px;
+    background-color: #2DB18833;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    color: #737373;
+    cursor: pointer;
+}
+
+.active-button {
+    background-color: var(--primary-green);
+    color: #FFFFFF;
+}
+
+.type-button svg {
+    color: #737373;
+    margin-bottom: 4px;
+}
+
+.active-button svg {
+    color: #FFFFFF;
+}
+
+.btn-next {
+    margin-top: 32px;
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #2DB188;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.94px;
+    color: #FFFFFF;
+    cursor: pointer;
+}
