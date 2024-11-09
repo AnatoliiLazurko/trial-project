@@ -8,7 +8,7 @@ function App() {
       <Routes>
         <Route path="/auth/:type/:registerType?" element={<AuthorizationPage />} />
 
-        <Route path="/" element={<Navigate to="/auth/register" />} />
+        <Route path="/" element={<Navigate to="/auth/login" />} />
       </Routes>
     </>
   );

@@ -18,6 +18,7 @@
     font-weight: 600;
     line-height: 48px;
     color: #313131;
+    font-family: "Inter", sans-serif;
 }
 
 .subtitle {
@@ -27,6 +28,7 @@
     line-height: 27px;
     font-weight: 400;
     color: #737373;
+    font-family: 'Source Sans 3';
 }
 
 .btn-container {
@@ -49,6 +51,7 @@
     line-height: 16px;
     font-weight: 700;
     color: #737373;
+    font-family: 'Source Sans 3';
     cursor: pointer;
 }
 
@@ -79,5 +82,6 @@
     font-weight: 600;
     line-height: 16.94px;
     color: #FFFFFF;
+    font-family: "Inter", sans-serif;
     cursor: pointer;
 }

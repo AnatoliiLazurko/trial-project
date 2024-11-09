@@ -17,6 +17,7 @@
     font-size: 32px;
     line-height: 48px;
     color: #313131;
+    font-family: 'Source Sans 3';
 }
 
 .signup-subtitle {
@@ -27,6 +28,7 @@
     font-size: 18px;
     line-height: 27px;
     color: #737373;
+    font-family: 'Source Sans 3';
 }
 
 .form-container {
@@ -69,6 +71,7 @@
     font-weight: 400;
     font-size: 18px;
     color: #737373;
+    font-family: 'Source Sans 3';
     background-color: #E8F2EE;
     border: none;
     outline: none;
@@ -101,6 +104,7 @@
     font-weight: 600;
     font-size: 16px;
     color: #FFFFFF;
+    font-family: 'Source Sans 3';
     cursor: pointer;
 }
 
@@ -117,6 +121,7 @@
     font-size: 16px;
     line-height: 24px;
     color: #667085;
+    font-family: 'Source Sans 3';
 }
 
 .auth-btn-container {
@@ -131,7 +136,7 @@
     width: 100%;
     height: 53px;
     background-color: #FFFFFF;
-    border: 1px solid var(--primary-green);
+    border: 1px solid #d2d2d2;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -140,7 +145,13 @@
     font-weight: 400;
     font-size: 18px;
     color: #0C141D;
+    font-family: 'Source Sans 3';
     line-height: 27px;
+    transition: 0.5s;
+}
+
+.auth-btn:hover {
+    border-color: var(--primary-green);
 }
 
 .auth-btn img {
@@ -154,7 +165,8 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #595F67
+    color: #595F67;
+    font-family: 'Source Sans 3';
 }
 
 .policy span {
@@ -172,6 +184,7 @@
     font-size: 16px;
     line-height: 24px;
     color: #667085;
+    font-family: 'Source Sans 3';
 }
 
 .have-account-text span {

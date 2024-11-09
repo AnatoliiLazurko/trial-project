@@ -8,7 +8,6 @@ import hidenEyeIcon from '../../../images/authorization/hiden-eye-icon.png';
 import eyeIcon from '../../../images/authorization/eye-icon.png';
 import notCheckedIcon from '../../../images/authorization/not-checked.png';
 import googleIcon from '../../../images/authorization/google-icon.png';
-import facebookIcon from '../../../images/authorization/facebook-icon.png';
 import checkboxChecked from '../../../images/authorization/checkbox-checked.png';
 import { useGoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
@@ -23,7 +22,6 @@ const loginValidationSchema = Yup.object({
         .email("Write the correct email format")
         .required("Email is required"),
     password: Yup.string()
-        .min(6, "Password must containe at least 6 symbols")
         .required("Password is required"),
 });
 
@@ -108,25 +106,22 @@ const LoginForm = () => {
                     </div>
 
                     <Field className={styles["btn-signin"]} type="submit" value="SIGN IN" id="signin" />
+                    <div className={styles["btn-signup"]} onClick={navigateToRegister}>SIGN UP</div>
                 </Form>
             </Formik>
 
             <div className={styles["login-with-container"]}>
-                <p className={styles["login-with-text"]}>Or login with</p>
+                <p className={styles["login-with-text"]}>Or</p>
 
                 <div className={styles["auth-btn-container"]}>
                     <div className={styles["auth-btn"]} onClick={signinWithGoogle}>
                         <img src={googleIcon} alt="Google icon" />
-                        <p>Google</p>
-                    </div>
-                    <div className={styles["auth-btn"]}>
-                        <img src={facebookIcon} alt="Facebook icon" />
-                        <p>Facebook</p>
+                        <p>Sign in via Google</p>
                     </div>
                 </div>
             </div>
 
-            <p className={styles["have-account-text"]}>Don’t have an account? <span onClick={navigateToRegister}>Sign up</span></p>
+            {/* <p className={styles["have-account-text"]}>Don’t have an account? <span onClick={navigateToRegister}>Sign up</span></p> */}
         </div>
     );
 }
