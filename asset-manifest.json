@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/trial-project/static/css/main.66cdb29e.css",
+    "main.js": "/trial-project/static/js/main.46acad76.js",
+    "static/js/453.6832a651.chunk.js": "/trial-project/static/js/453.6832a651.chunk.js",
+    "static/media/auth-page-background.png": "/trial-project/static/media/auth-page-background.bbe5c9f203d27efddc1d.png",
+    "index.html": "/trial-project/index.html",
+    "main.66cdb29e.css.map": "/trial-project/static/css/main.66cdb29e.css.map",
+    "main.46acad76.js.map": "/trial-project/static/js/main.46acad76.js.map",
+    "453.6832a651.chunk.js.map": "/trial-project/static/js/453.6832a651.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.66cdb29e.css",
+    "static/js/main.46acad76.js"
+  ]
+}
