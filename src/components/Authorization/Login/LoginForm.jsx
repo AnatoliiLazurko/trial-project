@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './LoginFormStyles.module.css';
 import * as Yup from "yup";
 import { Formik, Form, Field } from 'formik';
-import userIcon from '../../../images/authorization/user-icon.png';
+import gmailIcon from '../../../images/authorization/gmail-icon.png';
 import lockIcon from '../../../images/authorization/lock-icon.png';
 import hidenEyeIcon from '../../../images/authorization/hiden-eye-icon.png';
 import eyeIcon from '../../../images/authorization/eye-icon.png';
@@ -70,7 +70,7 @@ const LoginForm = () => {
                 <Form className={styles["form-container"]}>
                     <div className={styles["input-wrapper"]}>
                         <div className={styles["pre-input-icon"]}>
-                            <img src={userIcon} alt="User icon" />
+                            <img src={gmailIcon} alt="User icon" />
                         </div>
                         <Field
                             type="email"
