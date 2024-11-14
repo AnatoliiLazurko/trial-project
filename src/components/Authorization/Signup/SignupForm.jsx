@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styles from './SignupFormStyles.module.css';
 import * as Yup from "yup";
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import userIcon from '../../../images/authorization/user-icon.png';
 import lockIcon from '../../../images/authorization/lock-icon.png';
 import hidenEyeIcon from '../../../images/authorization/hiden-eye-icon.png';
@@ -95,75 +95,104 @@ const SignupForm = () => {
                 validationSchema={signupValidationSchema}
                 onSubmit={submitHadler}
             >
-                <Form className={styles["form-container"]}>
-                    <div className={styles["input-wrapper"]}>
-                        <div className={styles["pre-input-icon"]}>
-                            <img src={userIcon} alt="User icon" />
-                        </div>
-                        <Field
-                            name="firstname"
-                            placeholder="First Name"
-                            className={styles["input-field"]}
-                        />
-                    </div>
+                {({ errors, touched }) => (
+                    <Form className={styles["form-container"]}>
 
-                    <div className={styles["input-wrapper"]}>
-                        <div className={styles["pre-input-icon"]}>
-                            <img src={userIcon} alt="User icon" />
+                        <div className={styles["input-wrapper"]}>
+                            <div className={styles["pre-input-icon"]}>
+                                <img src={userIcon} alt="User icon" />
+                            </div>
+                            <Field
+                                name="firstname"
+                                placeholder="First Name"
+                                className={`${styles["input-field"]} 
+                                    ${touched.firstname && errors.firstname ? styles["input-error"] :
+                                    touched.firstname && !errors.firstname ? styles["input-correct"] : ""}
+                                `}
+                            />
                         </div>
-                        <Field
-                            name="lastname"
-                            placeholder="Last Name"
-                            className={styles["input-field"]}
-                        />
-                    </div>
+                        <ErrorMessage name="firstname" component="p" className={styles["error"]} />
 
-                    <div className={styles["input-wrapper"]}>
-                        <div className={styles["pre-input-icon"]}>
-                            <img src={gmailIcon} alt="User icon" />
+                        <div className={styles["input-wrapper"]}>
+                            <div className={styles["pre-input-icon"]}>
+                                <img src={userIcon} alt="User icon" />
+                            </div>
+                            <Field
+                                name="lastname"
+                                placeholder="Last Name"
+                                className={`${styles["input-field"]} 
+                                    ${touched.lastname && errors.lastname ? styles["input-error"] :
+                                    touched.lastname && !errors.lastname ? styles["input-correct"] : ""}
+                                `}
+                            />
                         </div>
-                        <Field
-                            type="email"
-                            name="email"
-                            placeholder="Email"
-                            className={styles["input-field"]}
-                        />
-                    </div>
+                        <ErrorMessage name="lastname" component="p" className={styles["error"]} />
 
-                    <div className={styles["input-wrapper"]}>
-                        <div className={styles["pre-input-icon"]}>
-                            <img src={lockIcon} alt="Lock icon" />
+                        <div className={styles["input-wrapper"]}>
+                            <div className={styles["pre-input-icon"]}>
+                                <img src={gmailIcon} alt="User icon" />
+                            </div>
+                            <Field
+                                type="email"
+                                name="email"
+                                placeholder="Email"
+                                className={`${styles["input-field"]} 
+                                    ${touched.email && errors.email ? styles["input-error"] :
+                                    touched.email && !errors.email ? styles["input-correct"] : ""}
+                                `}
+                            />
                         </div>
-                        <Field
-                            type={showPassword ? "text" : "password"}
-                            name="password"
-                            placeholder="Password"
-                            className={styles["input-field"]}
-                        />
-                        <div className={styles["after-input-icon"]}>
-                            {!showPassword && <img src={hidenEyeIcon} alt="Hiden eye icon" onClick={togglePasswordVisibility} />}
-                            {showPassword && <img src={eyeIcon} alt="Eye icon" onClick={togglePasswordVisibility} />}
-                        </div>
-                    </div>
+                        <ErrorMessage name="email" component="p" className={styles["error"]} />
 
-                    <div className={styles["input-wrapper"]}>
-                        <div className={styles["pre-input-icon"]}>
-                            <img src={lockIcon} alt="Lock icon" />
+                        <div className={styles["input-wrapper"]}>
+                            <div className={styles["pre-input-icon"]}>
+                                <img src={lockIcon} alt="Lock icon" />
+                            </div>
+                            <Field
+                                type={showPassword ? "text" : "password"}
+                                name="password"
+                                placeholder="Password"
+                                className={`${styles["input-field"]} 
+                                    ${touched.password && errors.password ? styles["input-error"] :
+                                    touched.password && !errors.password ? styles["input-correct"] : ""}
+                                `}
+                            />
+                            <div className={styles["after-input-icon"]}>
+                                {!showPassword ? (
+                                    <img src={hidenEyeIcon} alt="Hidden eye icon" onClick={togglePasswordVisibility} />
+                                ) : (
+                                    <img src={eyeIcon} alt="Eye icon" onClick={togglePasswordVisibility} />
+                                )}
+                            </div>
                         </div>
-                        <Field
-                            type={showConfirmPassword ? "text" : "password"}
-                            name="confirmPassword"
-                            placeholder="Confirm Password"
-                            className={styles["input-field"]}
-                        />
-                        <div className={styles["after-input-icon"]}>
-                            {!showConfirmPassword && <img src={hidenEyeIcon} alt="Hiden eye icon" onClick={togglePasswordConfirmVisibility} />}
-                            {showConfirmPassword && <img src={eyeIcon} alt="Eye icon" onClick={togglePasswordConfirmVisibility} />}
-                        </div>
-                    </div>
+                        <ErrorMessage name="password" component="p" className={styles["error"]} />
 
-                    <Field className={styles["btn-signin"]} type="submit" value="SIGN UP" id="signup" />
-                </Form>
+                        <div className={styles["input-wrapper"]}>
+                            <div className={styles["pre-input-icon"]}>
+                                <img src={lockIcon} alt="Lock icon" />
+                            </div>
+                            <Field
+                                type={showConfirmPassword ? "text" : "password"}
+                                name="confirmPassword"
+                                placeholder="Confirm Password"
+                                className={`${styles["input-field"]} 
+                                    ${touched.confirmPassword && errors.confirmPassword ? styles["input-error"] :
+                                    touched.confirmPassword && !errors.confirmPassword ? styles["input-correct"] : ""}
+                                `}
+                            />
+                            <div className={styles["after-input-icon"]}>
+                                {!showConfirmPassword ? (
+                                    <img src={hidenEyeIcon} alt="Hidden eye icon" onClick={togglePasswordConfirmVisibility} />
+                                ) : (
+                                    <img src={eyeIcon} alt="Eye icon" onClick={togglePasswordConfirmVisibility} />
+                                )}
+                            </div>
+                        </div>
+                        <ErrorMessage name="confirmPassword" component="p" className={styles["error"]} />
+
+                        <Field className={styles["btn-signin"]} type="submit" value="SIGN UP" id="signup" />
+                    </Form>
+                )}
             </Formik>
 
             <p className={styles["policy"]}>By proceeding, I agree to <span>T&C</span> & <span>Privacy Policy</span></p>

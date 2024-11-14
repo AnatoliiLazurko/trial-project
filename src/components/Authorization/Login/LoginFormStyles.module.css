@@ -50,7 +50,6 @@
     border-radius: 10px;
     width: 50px;
     height: 50px;
-    background-color: #E8F2EE;
 }
 
 .pre-input-icon img {
@@ -74,19 +73,39 @@
 
 .after-input-icon {
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 50%;
+    right: 1px;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 10px;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background-color: #E8F2EE;
 }
 
 .after-input-icon img {
     cursor: pointer;
+}
+
+.input-correct {
+    border: 1px solid #2db188;
+}
+
+.input-error {
+    border: 1px solid #b12d2f;
+}
+
+.error {
+    margin: 0;
+    margin-top: 6px;
+    margin-bottom: -10px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Source Sans 3';
+    color: #b12d2f;
 }
 
 .remember-forgot {
