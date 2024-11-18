@@ -1,5 +1,6 @@
 .signup-container {
     width: 461px;
+    min-width: 330px;
     height: auto;
     margin: 0 auto;
 }
@@ -7,6 +8,14 @@
 .back-arrow {
     width: 24px;
     cursor: pointer;
+    color: #9e9e9e;
+}
+
+.logo-icon {
+    display: none;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 20px;
 }
 
 .signup-title {
@@ -54,7 +63,7 @@
     justify-content: center;
     border-radius: 10px;
     width: 50px;
-    height: 50px;
+    height: 100%;
 }
 
 .pre-input-icon img {
@@ -86,7 +95,7 @@
     justify-content: center;
     border-radius: 10px;
     width: 45px;
-    height: 45px;
+    height: calc(100% - 5px);
     background-color: #E8F2EE;
 }
 
@@ -113,7 +122,7 @@
     color: #b12d2f;
 }
 
-.btn-signin {
+.btn-signup {
     width: 100%;
     height: 50px;
     margin-top: 40px;
@@ -209,4 +218,91 @@
 .have-account-text span {
     color: var(--primary-green);
     cursor: pointer;
+}
+
+
+
+/* ADAPTATION */
+
+@media (max-width: 1024px) {
+    .back-arrow {
+        color: #fff;
+    }
+
+    .logo-icon {
+        display: block;
+    }
+
+    .signup-title {
+        color: #FFF;
+        margin-top: 20px;
+    }
+
+    .signup-subtitle {
+        color: #eaeaea;
+    }
+
+    .form-container {
+        margin-top: 20px;
+    }
+
+    .input-wrapper {
+        margin-top: 12px;
+    }
+
+    .policy {
+        color: #FFF;
+    }
+
+    .btn-signup {
+        margin-top: 20px;
+    }
+
+    .signup-with-text {
+        color: #FFF;
+    }
+
+    .have-account-text {
+        color: #FFF;
+    }
+}
+
+@media (max-width: 768px) {}
+
+
+@media (max-width: 480px) {
+    .signup-container {
+        width: 100%;
+    }
+
+    .logo-icon {
+        margin-top: 10px;
+    }
+
+    .signup-title {
+        margin-top: 10px;
+        font-size: 18px;
+        line-height: 27px;
+    }
+
+    .signup-subtitle {
+        font-size: 14px;
+    }
+
+    .form-container {
+        margin-top: 10px;
+    }
+
+    .input-wrapper {
+        margin-top: 12px;
+        height: 38px;
+    }
+
+    .input-field {
+        font-size: 14px;
+    }
+
+    .have-account-text {
+        display: none;
+    }
 }

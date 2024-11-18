@@ -1,7 +1,14 @@
 
 .login-container {
     width: 461px;
+    min-width: 330px;
     height: auto;
+    margin: 0 auto;
+}
+
+.logo-icon {
+    display: none;
+    width: 300px;
     margin: 0 auto;
 }
 
@@ -49,7 +56,7 @@
     justify-content: center;
     border-radius: 10px;
     width: 50px;
-    height: 50px;
+    height: 100%;
 }
 
 .pre-input-icon img {
@@ -81,7 +88,7 @@
     justify-content: center;
     border-radius: 10px;
     width: 45px;
-    height: 45px;
+    height: calc(100% - 5px);
     background-color: #E8F2EE;
 }
 
@@ -128,8 +135,8 @@
 }
 
 .checkbox-wrapper img {
-    width: 21px;
-    height: 21px;
+    width: 20px;
+    height: 20px;
     margin-right: 8px;
     cursor: pointer;
 }
@@ -219,17 +226,83 @@
 }
 
 
-/* .have-account-text {
-    margin: 0;
-    margin-top: 16px;
-    text-align: center;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: #667085;
+
+/* ADAPTATION */
+
+@media (max-width: 1024px) {
+
+    .logo-icon {
+        display: block;
+    }
+
+    .login-title {
+        color: #fff;
+        margin-top: 40px
+    }
+
+    .login-subtitle {
+        color: #eaeaea;
+    }
+
+    .input-wrapper {
+        margin-top: 12px;
+    }
+
+    .remember-forgot {
+        color: #fff;
+    }
+
+    .btn-signup {
+        margin-top: 28px;
+        background: #e8f2ee;
+    }
+
+    .login-with-text {
+        color: #fff;
+    }
 }
 
-.have-account-text span {
-    color: var(--primary-green);
-    cursor: pointer;
-} */
+@media (max-width: 768px) {
+
+}
+
+
+@media (max-width: 480px) {
+    .login-container {
+        width: 100%;
+    }
+
+    .login-title {
+        margin-top: 20px;
+        font-size: 18px;
+    }
+
+    .login-subtitle {
+        font-size: 14px;
+    }
+
+    .input-wrapper {
+        margin-top: 12px;
+        height: 38px;
+    }
+
+    .input-field {
+        font-size: 14px;
+    }
+
+    .remember-forgot {
+        font-size: 14px;
+    }
+
+    .btn-signin {
+        margin-top: 20px;
+    }
+
+    .btn-signup {
+        margin-top: 16px;
+    }
+
+    .login-with-text {
+        color: #fff;
+    }
+}

@@ -16,7 +16,13 @@ const AuthorizationPage = () => {
             <div className={styles["background-container"]}>
                 <img className={styles["auth-background-img"]} src={authPageBackground} alt="Authorization background" />
                 <div className={styles["text-overlay"]}>
-                    <img src={logo} alt="Logo" />
+                    <img className={styles["logo-icon"]} src={logo} alt="Logo" />
+                </div>
+                
+                <div className={styles["adaptation-container"]}>
+                    {type === "register" && (registerType === 'clients' || registerType === 'professionals') && <SignupForm />}
+                    {type === "login" && <LoginForm />}
+                    {registerType === "accountType" && <AccountType /> }
                 </div>
             </div>
 

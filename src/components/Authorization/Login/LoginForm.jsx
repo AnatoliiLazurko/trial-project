@@ -11,6 +11,7 @@ import googleIcon from '../../../images/authorization/google-icon.png';
 import checkboxChecked from '../../../images/authorization/checkbox-checked.png';
 import { useGoogleLogin } from '@react-oauth/google';
 import { useNavigate } from 'react-router-dom';
+import logo from '../../../images/authorization/logo.png';
 
 const initialValues = {
     email: '',
@@ -58,6 +59,8 @@ const LoginForm = () => {
 
     return (
         <div className={styles["login-container"]}>
+
+            <img className={styles["logo-icon"]} src={logo} alt="Logo" />
 
             <p className={styles["login-title"]}>Welcome Back!</p>
             <p className={styles["login-subtitle"]}>Welcome back, please enter your detail</p>
