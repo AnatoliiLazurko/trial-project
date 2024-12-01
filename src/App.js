@@ -9,6 +9,7 @@ function App() {
         <Route path="/auth/:type/:registerType?" element={<AuthorizationPage />} />
 
         <Route path="/" element={<Navigate to="/auth/login" />} />
+        
       </Routes>
     </>
   );
