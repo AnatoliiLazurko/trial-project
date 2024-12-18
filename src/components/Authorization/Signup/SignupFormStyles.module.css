@@ -20,7 +20,7 @@
 
 .signup-title {
     margin: 0;
-    margin-top: 40px;
+    margin-top: 4px;
     text-align: center;
     font-weight: 600;
     font-size: 32px;
@@ -223,6 +223,36 @@
 
 
 /* ADAPTATION */
+
+@media (min-resolution: 120dpi) {
+    .signup-container {
+        width: 400px;
+        min-width: 330px;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .signup-title {
+        font-size: 18px;
+    }
+
+    .signup-subtitle {
+        font-size: 14px;
+    }
+
+    .form-container {
+        margin-top: 10px;
+    }
+
+    .input-wrapper {
+        margin-top: 12px;
+        height: 40px;
+    }
+
+    .input-field {
+        font-size: 16px;
+    }
+}
 
 @media (max-width: 1024px) {
     .back-arrow {

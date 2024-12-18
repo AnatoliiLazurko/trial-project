@@ -6,10 +6,14 @@ import logo from '../../images/authorization/logo.png';
 import SignupForm from './Signup/SignupForm';
 import { useParams } from 'react-router-dom';
 import AccountType from './Signup/AccountType/AccountType';
+import EmailInput from './Processes/ResetPassword/EmailRecoveryInput/EmailInput';
+import ResetCode from './Processes/ResetPassword/ResetCode/ResetCode';
+import NewPassword from './Processes/ResetPassword/NewPassword/NewPassword';
+import VerificationCode from './Processes/EmailVerification/VerificationCode/VerificationCode';
 
 const AuthorizationPage = () => {
 
-    const { type, registerType } = useParams();
+    const { type, registerType, resetStage } = useParams();
 
     return (
         <div className={styles["page-wrapper"]}>
@@ -29,7 +33,11 @@ const AuthorizationPage = () => {
             <div className={styles["authorization-side"]}>
                 {type === "register" && (registerType === 'clients' || registerType === 'professionals') && <SignupForm />}
                 {type === "login" && <LoginForm />}
-                {registerType === "accountType" && <AccountType /> }
+                {registerType === "accountType" && <AccountType />}
+                {resetStage === "email-input" && <EmailInput />}
+                {resetStage === "verification-code" && <ResetCode />}
+                {resetStage === "new-password" && <NewPassword />}
+                {type === "email-verification" && <VerificationCode />}
             </div>
         </div>
     );

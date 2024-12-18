@@ -57,6 +57,10 @@ const LoginForm = () => {
         navigate('/auth/register/accountType');
     }
 
+    const navigateToResetPassword = () => {
+        navigate('/auth/reset-password/email-input');
+    }
+
     return (
         <div className={styles["login-container"]}>
 
@@ -74,7 +78,7 @@ const LoginForm = () => {
                     <Form className={styles["form-container"]}>
                         <div className={styles["input-wrapper"]}>
                             <div className={styles["pre-input-icon"]}>
-                                <img src={gmailIcon} alt="User icon" />
+                                <img src={gmailIcon} alt="Email icon" />
                             </div>
                             <Field
                                 type="email"
@@ -120,7 +124,7 @@ const LoginForm = () => {
                                 )}
                                 <p>Remember me</p>
                             </div>
-                            <div className={styles["forgot-password"]}>Forgot password</div>
+                            <div className={styles["forgot-password"]} onClick={navigateToResetPassword}>Forgot password</div>
                         </div>
 
                         <Field className={styles["btn-signin"]} type="submit" value="SIGN IN" id="signin" />

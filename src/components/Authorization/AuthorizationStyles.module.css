@@ -1,7 +1,8 @@
 
 .page-wrapper {
     display: grid;
-    grid-template-columns: minmax(400px, 800px) 1fr;
+    /* grid-template-columns: minmax(400px, 800px) 1fr; */
+    grid-template-columns: 1fr 1.3fr;
     overflow: hidden;
 }
 
@@ -50,6 +51,10 @@
 
 
 /* ADAPTATION */
+
+@media (min-resolution: 120dpi) {
+    
+}
 
 @media (max-width: 1200px) {
     .auth-background-img {

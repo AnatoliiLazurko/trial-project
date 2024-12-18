@@ -1,0 +1,131 @@
+
+.email-input-container {
+    width: 482px;
+    min-width: 330px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.back-arrow {
+    width: 24px;
+    cursor: pointer;
+    color: #9e9e9e;
+}
+
+.title {
+    margin: 0;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    color: #313131;
+    font-family: "Inter", sans-serif;
+}
+
+.subtitle {
+    margin: 0;
+    margin-top: 4px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #737373;
+    font-family: 'Source Sans 3';
+}
+
+.form-container {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-wrapper {
+    width: 100%;
+    height: 52px;
+    border-radius: 10px;
+    border: 1px solid #D2D2D2;
+    margin-top: 16px;
+    position: relative;
+}
+
+.pre-input-icon {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 50px;
+    height: 100%;
+}
+
+.pre-input-icon img {
+    width: 20px;
+    height: 20px;
+}
+
+.input-field {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    padding: 12px 6px 12px 52px;
+    font-weight: 400;
+    font-size: 18px;
+    color: #737373;
+    font-family: 'Source Sans 3';
+    background-color: #E8F2EE;
+    border: none;
+    outline: none;
+}
+
+.after-input-icon {
+    position: absolute;
+    top: 50%;
+    right: 1px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 45px;
+    height: calc(100% - 5px);
+    background-color: #E8F2EE;
+}
+
+.after-input-icon img {
+    cursor: pointer;
+}
+
+.input-correct {
+    border: 1px solid #2db188;
+}
+
+.input-error {
+    border: 1px solid #b12d2f;
+}
+
+.error {
+    margin: 0;
+    margin-top: 6px;
+    margin-bottom: -10px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Source Sans 3';
+    color: #b12d2f;
+}
+
+.btn-reset {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 10px;
+    background-color: var(--primary-green);
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    color: #FFFFFF;
+    font-family: 'Source Sans 3';
+    cursor: pointer;
+}
